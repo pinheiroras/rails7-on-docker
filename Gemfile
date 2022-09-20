@@ -52,7 +52,7 @@ gem "image_processing", "~> 1.12"
 
 gem "brakeman"
 gem "bundler-audit"
-gem "rubocop-rails", "~> 2.16.0"
+gem "rubocop-rails", "~> 2.16.1"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
