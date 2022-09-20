@@ -1,5 +1,7 @@
 FROM ruby:3.1.2-slim
 
+ENV RAILS_ENV=development
+
 RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     build-essential \
     gnupg2 \
@@ -17,6 +19,10 @@ ENV LANG=C.UTF-8 \
 RUN gem update --system && gem install bundler
 
 WORKDIR /usr/src/app
+
+COPY . .
+
+RUN bundle install
 
 ENTRYPOINT ["./entrypoint.sh"]
 
