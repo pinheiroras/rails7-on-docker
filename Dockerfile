@@ -1,4 +1,4 @@
-FROM ruby:3.1.2-slim
+FROM ruby:3.2.1-slim-buster
 
 ENV RAILS_ENV=development
 
@@ -22,7 +22,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN bundle install
+RUN bundle update && bundle install
 
 ENTRYPOINT ["./entrypoint.sh"]
 
